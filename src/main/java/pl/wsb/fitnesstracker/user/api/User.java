@@ -18,13 +18,19 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Nullable
+    @Column(name = "id", nullable = false, unique = true)
     private Long id;
+
+    @Column(name = "firstName", nullable = false)
+    private String firstName;
+
+    @Column(name = "lastName", nullable = false)
+    private String lastName;
 
     @Column(name = "birthdate", nullable = false)
     private LocalDate birthdate;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     public User(
@@ -33,6 +39,8 @@ public class User {
             final LocalDate birthdate,
             final String email) {
 
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.birthdate = birthdate;
         this.email = email;
     }
