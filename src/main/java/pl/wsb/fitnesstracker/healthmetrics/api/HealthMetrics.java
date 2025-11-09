@@ -7,6 +7,11 @@ import pl.wsb.fitnesstracker.user.api.User;
 
 import java.util.Date;
 
+@Entity
+@Table(name = "Health_Metrics")
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class HealthMetrics {
 
     @Id
