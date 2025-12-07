@@ -1,11 +1,11 @@
 package pl.wsb.fitnesstracker.user.internal;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import pl.wsb.fitnesstracker.user.api.User;
 import pl.wsb.fitnesstracker.user.api.UserDto;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * UserController is responsible for handling HTTP requests related to user operations.
@@ -31,5 +31,15 @@ class UserController {
                 .map(userMapper::toDto)
                 .toList();
     }
+
+    @GetMapping("/{userId}")
+    public Optional<User> getUser(@PathVariable Long userId) {
+        return userService.getUser(userId);
+    }
+
+//    @DeleteMapping("/{userId}")
+//    public void deleteUser(@PathVariable Long userId) {
+//        userService.deleteUser(userId);
+//    }
 }
 
