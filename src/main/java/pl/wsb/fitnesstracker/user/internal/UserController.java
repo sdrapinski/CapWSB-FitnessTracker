@@ -31,7 +31,7 @@ class UserController {
                 .map(userMapper::toDto)
                 .toList();
     }
-
+    //test zadanie
     @GetMapping("/{userId}")
     public Optional<User> getUser(@PathVariable Long userId) {
         return userService.getUser(userId);
