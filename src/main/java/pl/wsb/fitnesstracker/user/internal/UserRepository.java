@@ -1,3 +1,5 @@
+// This code snippet is defining a Java interface named `UserRepository` that extends `JpaRepository`
+// from Spring Data JPA. The interface includes two methods for querying user data from a database:
 package pl.wsb.fitnesstracker.user.internal;
 
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,3 +1,7 @@
+/**
+ * The `UserMapper` class in Java provides methods to convert User entities to different types of User
+ * DTOs and vice versa.
+ */
 package pl.wsb.fitnesstracker.user.internal;
 
 import org.springframework.stereotype.Component;

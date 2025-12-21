@@ -1,3 +1,7 @@
+/**
+ * The `UserServiceImpl` class implements `UserService` and `UserProvider` interfaces to provide
+ * user-related functionalities using a `UserRepository`.
+ */
 package pl.wsb.fitnesstracker.user.internal;
 
 import lombok.extern.slf4j.Slf4j;

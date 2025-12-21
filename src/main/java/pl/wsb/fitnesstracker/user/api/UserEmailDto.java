@@ -1,3 +1,4 @@
+// This code snippet is defining a Data Transfer Object (DTO) class named `UserEmailDto` in Java.
 package pl.wsb.fitnesstracker.user.api;
 
 import jakarta.annotation.Nullable;

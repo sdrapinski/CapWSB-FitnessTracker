@@ -1,3 +1,4 @@
+// This code snippet is defining a Data Transfer Object (DTO) class named `UserDto` in Java.
 package pl.wsb.fitnesstracker.user.api;
 
 import com.fasterxml.jackson.annotation.JsonFormat;

@@ -1,3 +1,7 @@
+/**
+ * The `UserNotFoundException` class extends `NotFoundException` and indicates that a `User` was not
+ * found.
+ */
 package pl.wsb.fitnesstracker.user.api;
 
 import pl.wsb.fitnesstracker.exception.api.NotFoundException;
