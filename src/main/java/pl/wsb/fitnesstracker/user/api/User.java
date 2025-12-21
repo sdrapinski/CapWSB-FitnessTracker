@@ -14,23 +14,32 @@ import java.time.LocalDate;
 @ToString
 public class User {
 
+    /* Primary key identifier */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Nullable
     private Long id;
-
+    /* User's first name */
     @Column
     private String firstName;
-
+    /* User's last name */
     @Column
     private String lastName;
-
+    /* User's birthdate */
     @Column(name = "birthdate", nullable = false)
     private LocalDate birthdate;
-
+    /* User's email address */
     @Column(nullable = false, unique = true)
     private String email;
 
+    /* Constructor to create a new User instance
+    * @param firstName User's first name
+    * @param lastName User's last name
+    * @param birthdate User's birthdate
+    * @param email User's email address
+    *
+    * @return A new User object
+    * */
     public User(
             final String firstName,
             final String lastName,
@@ -43,6 +52,7 @@ public class User {
         this.lastName = lastName;
     }
 
+    // Getters and Setters
     @Nullable
     public Long getId() {
         return id;

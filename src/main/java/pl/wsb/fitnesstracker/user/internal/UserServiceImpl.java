@@ -6,6 +6,7 @@ import pl.wsb.fitnesstracker.user.api.User;
 import pl.wsb.fitnesstracker.user.api.UserProvider;
 import pl.wsb.fitnesstracker.user.api.UserService;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,9 +43,28 @@ class UserServiceImpl implements UserService, UserProvider {
         return userRepository.findAll();
     }
 
-//    @Override
-//    public void deleteUser(final Long userId) {
-//        userRepository.deleteById(userId);
-//    }
+    public void deleteUser(final Long userId) {
+        userRepository.deleteById(userId);
+    }
+
+    public List<User> findUsersOlderThan(int age) {
+        LocalDate cutoffDate = LocalDate.now().minusYears(age);
+        return userRepository.findByBirthdateBefore(cutoffDate);
+    }
+
+    public User updateUser(Long id, User userWithUpdates) {
+        return userRepository.findById(id)
+                .map(existingUser -> {
+                    existingUser.setFirstName(userWithUpdates.getFirstName());
+                    existingUser.setLastName(userWithUpdates.getLastName());
+                    existingUser.setBirthdate(userWithUpdates.getBirthdate());
+                    existingUser.setEmail(userWithUpdates.getEmail());
+                    return userRepository.save(existingUser);
+                })
+                .orElseThrow(() -> new IllegalArgumentException("User with ID " + id + " not found"));
+    }
+
+
+
 
 }
